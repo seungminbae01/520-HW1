@@ -1,20 +1,19 @@
-
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List; 
 
 public class ExpenseTrackerView extends JFrame {
 
-  private JTable transactionsTable;
-  private JButton addTransactionBtn;
+  private final JTable transactionsTable;
+  private final JButton addTransactionBtn;
   private JTextField amountField;
   private JTextField categoryField;
-  private DefaultTableModel model;
-  private List<Transaction> transactions = new ArrayList<>();
+  private final DefaultTableModel model;
+  private final List<Transaction> transactions = new ArrayList<>();
 
   
 
@@ -120,8 +119,10 @@ public class ExpenseTrackerView extends JFrame {
   
   }
 
+  @Override
   public List<Transaction> getTransactions() {
-    return transactions;
+    // Return an unmodifiable copy for immutability
+    return Collections.unmodifiableList(new ArrayList<>(transactions));
   }
   
   public void addTransaction(Transaction t) {
