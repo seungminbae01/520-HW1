@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,6 +28,15 @@ public class ExpenseTrackerApp {
       // Get transaction data from view
       double amount = view.getAmountField(); 
       String category = view.getCategoryField();
+
+      if (!InputValidation.isValidAmount(view.getAmountField())) {
+          JOptionPane.showMessageDialog(view, "Amount must be a number > 0 and < 1000.");
+          return;
+      }
+      if (!InputValidation.isValidCategory(view.getCategoryField())) {
+          JOptionPane.showMessageDialog(view, "Category must be: food, travel, bills, entertainment, or other.");
+          return;
+      }
 
       // Create transaction object
       Transaction t = new Transaction(amount, category);
