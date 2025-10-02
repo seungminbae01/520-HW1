@@ -40,3 +40,10 @@ Here are some examples of violating ```non-functional``` requirements:
 
 ## Understandibility
 For the understandability section, we will be inspecting your git log. You should include either the .git folder or else a gitLog.(pdf | txt).
+
+Supported Features
+- Add new transactions with an amount, category, and automatically generated timestamp.
+- Automatically calculate and display the total expense.
+- Transactions are displayed in a table with columns: Serial, Amount, Category, Date.
+- Input validation ensures the amount is between 0–1000 and the category is one of: food, travel, bills, entertainment, other.
+- Errors are displayed in the GUI when invalid input is provided.
