@@ -119,7 +119,6 @@ public class ExpenseTrackerView extends JFrame {
   
   }
 
-  @Override
   public List<Transaction> getTransactions() {
     // Return an unmodifiable copy for immutability
     return Collections.unmodifiableList(new ArrayList<>(transactions));

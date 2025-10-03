@@ -7,13 +7,8 @@ public class InputValidation {
         Arrays.asList("food", "travel", "bills", "entertainment", "other")
     );
 
-    public static boolean isValidAmount(String amountStr) {
-        try {
-            double amount = Double.parseDouble(amountStr);
-            return amount > 0 && amount < 1000;
-        } catch (NumberFormatException e) {
-            return false;
-        }
+    public static boolean isValidAmount(double amount) {
+        return amount > 0 && amount < 1000;
     }
 
     public static boolean isValidCategory(String category) {
